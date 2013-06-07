@@ -84,6 +84,10 @@ namespace App\Model\Manager{
       return $this->getByUsername($user->getUsername());
       endif;
     }
+	
+	 function getWebroot(){
+	  	return $_SERVER['HTTP_HOST'];
+	  }
 
     function remove($user_id) {
       $this->_collection->remove(array('_id' => new MongoId($user_id)));

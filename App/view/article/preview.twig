@@ -4,6 +4,7 @@
 </h3>
 <p class="author">
   <small>
+ 
     <i class="icon-user"></i>
     {% set username = app.user_manager.getById(article.user_id).username %}
     <a href="{{path('article.getbyusername',{username: username})}}">{{username}}</a>

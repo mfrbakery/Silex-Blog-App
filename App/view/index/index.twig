@@ -4,11 +4,12 @@
 	<div>A show case app powered by PHP , Silex , Symfony , MongoDB and Twitter Bootstrap</div>
 	<div>Please register and write articles about anything you like</div>
 	<div> <a href="https://github.com/Mparaiso/Silex-Blog-App">Get the source here.</a> </div>
-	<div><small>Design : M.Paraiso</small> </div>
+
 	</div></div>
 {% endblock %}
 {% block content %}
 	<div class='row'>
+	
 	{% for article in articles %}
 		{% if loop.index < 4 %}
 		<div class="span4">

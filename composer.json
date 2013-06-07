@@ -10,9 +10,12 @@
     "symfony/twig-bridge":"*",
     "symfony/locale":"*",
     "symfony/validator":"*",
+    "symfony/debug": "2.3.*@dev",
+    "rych/phpass": "3.x",
     "symfony/security":"*",
     "monolog/monolog":"*",
     "symfony/monolog-bridge":"*",
+    "doctrine/dbal": "2.2.x",
     "symfony/config":"*"
     }
 }

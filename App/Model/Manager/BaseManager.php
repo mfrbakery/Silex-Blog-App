@@ -40,5 +40,9 @@ class BaseManager{
     $collection = $db->selectCollection($this->collection);
     return $collection;
   }
+  
+  function getWebroot(){
+  	return $_SERVER['DOCUMENT_ROOT'];
+  }
  
 }

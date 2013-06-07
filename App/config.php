@@ -203,7 +203,7 @@ $app['filter.mustbeadmin']=$app->protect(
 );
 
 # using symfony reverse proxy
-Request::trustProxyData();
+//Request::trustProxyData();
 
 $app['silexblog.url']=function(){
   return $app['url_generator']->generate('index.index');
@@ -212,6 +212,9 @@ $app['silexblog.url']=function(){
 /** allowed tags for content rendering in the view **/
 $app['silexblog.config.allowedTags']='<a>,<b>,<u>,<small>,<strong>,<li>,<ol>,<ul>,<img>,<h3>,<h4>,<h5>,<h6>,<p>';
 
+$app['silexblog.root'] = function(){
+	return $_SERVER['DOCUMENT_ROOT'];
+};
 // EN: Get routes.
 // FR: Obtenir les routes.
 require 'routes.php';
