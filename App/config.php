@@ -203,7 +203,7 @@ $app['filter.mustbeadmin']=$app->protect(
 );
 
 # using symfony reverse proxy
-Request::trustProxyData();
+//Request::trustProxyData();
 
 $app['silexblog.url']=function(){
   return $app['url_generator']->generate('index.index');
