@@ -1,0 +1,28 @@
+<?php
+namespace MyApp\Form\DataTransformer{
+  use Symfony\Component\Form\DataTransformerInterface;
+  class MetadataTransformer implements DataTransformerInterface{
+
+    function transform($metadatas){
+      return $metadatas;
+    }
+
+    function reverseTransform($metadatas){
+      if(is_array($metadatas)){
+        foreach($metadatas as $value){
+          $result[$value['name']]=$value['value'];
+        }
+        return $result;
+      }
+    }
+	
+	// function addNormTransformer($metadatas){
+      // if(is_array($metadatas)){
+        // foreach($metadatas as $value){
+          // $result[$value['name']]=$value['value'];
+        // }
+        // return $result;
+      // }
+    // }
+  }
+}
