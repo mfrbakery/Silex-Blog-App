@@ -34,7 +34,7 @@ namespace MyApp\Controller{
             $index->match("/",'MyApp\Controller\IndexController::index')->bind("index.index");
             $index->match("/info",'App\Controller\IndexController::info');
             $index->match("/about",'MyApp\Controller\IndexController::about')->bind("index.about");
-            $index->match("/contact",'App\Controller\IndexController::contact')->bind("index.contact");
+            $index->match("/contact",'MyApp\Controller\IndexController::contact')->bind("index.contact");
             return $index;
         }
     }

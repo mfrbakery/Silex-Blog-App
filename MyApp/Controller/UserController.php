@@ -44,7 +44,9 @@ namespace MyApp\Controller{
       $app['monolog']->addInfo($form_error);
       if ($form_error != null):
         $loginForm->addError(new FormError($form_error));
-      $app['session']->getFlashBag("error", "Wrong credentials");
+		  $session = $app['session'];
+		
+      		$session->getFlashBag("Wrong credentials",array("attr" => array("class" => "alert alert-error")));
       endif;
       $last_username = $app['session']->get('_security.last_username');
       return $app['twig']->render('user/login.twig', array('loginForm' => $loginForm->createView(), "form_error" => $form_error, 'last_username' => $last_username));
