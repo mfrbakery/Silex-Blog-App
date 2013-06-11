@@ -10,6 +10,7 @@ namespace MyApp\Controller{
   use MyApp\Model\Entity\User ;
   use MyApp\Model\Manager\ISpamManager;
   use MyApp\Model\Manager\IUserManager;
+  use Symfony\Component\HttpFoundation\Session\Session;
 
 
   /**
@@ -35,6 +36,8 @@ namespace MyApp\Controller{
       $user->get('/logout', array($this,"logout"))->bind('user.logout');
       $user->get('/signup', array($this,"signup"))->bind('user.signup');
       $user->post('/dosignup', array($this,"doSignUp"))->bind('user.dosignup');
+	  $user->post('/updateuser', array($this, "updateUser"))->bind('user.profile');
+	  
       return $user;
     }
 
@@ -45,8 +48,12 @@ namespace MyApp\Controller{
       if ($form_error != null):
         $loginForm->addError(new FormError($form_error));
 		  $session = $app['session'];
-		
-      		$session->getFlashBag("Wrong credentials",array("attr" => array("class" => "alert alert-error")));
+			$newsession = new Session();
+			$session->getFlashBag()->add('notice', 'Wrong Credentials');
+			foreach ($session->getFlashBag()->get('notice', array()) as $message) {
+			   // echo "<div id='flash_msg' class='alert alert-error'>$message</div>";
+			}
+      		//$session->getFlashBag("Wrong credentials",array("attr" => array("class" => "alert alert-error")));
       endif;
       $last_username = $app['session']->get('_security.last_username');
       return $app['twig']->render('user/login.twig', array('loginForm' => $loginForm->createView(), "form_error" => $form_error, 'last_username' => $last_username));
@@ -56,6 +63,11 @@ namespace MyApp\Controller{
       $registrationForm = $app['form.factory']->create(new \MyApp\Form\Register());
       return $app['twig']->render('user/register.twig', array("registrationForm" => $registrationForm->createView()));
     }
+	
+	function updateUser(Application $app){
+		$updatForm = $app['form.factory']->create(new \MyApp\Form\UpdateUser());
+		return $app['twig']->render('user/profile.twig', array('updateuserform' => $updatForm->createView()));
+	}
 
     function doSignUp(Application $app) {
       $registrationForm = $app['form.factory']->create(new \MyApp\Form\Register());

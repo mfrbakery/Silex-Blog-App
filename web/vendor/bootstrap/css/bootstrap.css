@@ -5622,3 +5622,10 @@ a.badge:hover {
 .affix {
   position: fixed;
 }
+
+#flash_msg {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 10000;
+}

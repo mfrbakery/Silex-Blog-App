@@ -193,12 +193,12 @@ $app['filter.mustbeowner'] = $app->protect(
 $app['filter.mustbeadmin']=$app->protect(
 
   function(Request $request)use($app){
-    if(false===$app['security']->isGranted('ROLE_ADMIN')):
+    if(false===$app['security']->isGranted('ROLE_ADMIN')){
       $user = $app['user_manager']->getUser();
-    $app['session']->setFlash('error','You cant access this resouce!');
+    $app['session']->getFlashBag('error','You cant access this resouce!');
     $app['monolog']->addWarning('unauthorized access from user '.$user->username.' to '.$request->getRequestURI());
     return $app->redirect($app['url_generator']->generate('index.index'));
-    endif;
+    }
   }
 );
 

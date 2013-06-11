@@ -73,7 +73,7 @@ namespace MyApp\Model\Manager{
       $user['updated_at']=new MongoDate();
       $userToCommit = $user->toArray();
       unset($userToCommit['_id']);
-      $status = $this->_collection->insert($userToCommit, array('safe' => true));
+      $status = $this->_collection->save($userToCommit, array('safe' => true));
       return new UserEntity($userToCommit);
     }
 
