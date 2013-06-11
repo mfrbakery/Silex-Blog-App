@@ -8,6 +8,7 @@
     <li><a href="{{ path('admin.user.profile') }}">Profile</a></li>
     <li><a href="#">Account</a></li>
     <li><a href="{{ path('admin.article.dashboard') }}">Articles</a></li>
+    <li><a href="{{ path('user.updateuser') }}">Update Roles</a></li>
     {% if is_granted('ROLE_EDITOR') %}
     <li><a href="#">Comments</a></li>
     {% endif %}

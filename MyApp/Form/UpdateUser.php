@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 
 class UpdateUser extends AbstractType{
 	 public function buildForm(FormBuilderInterface $builder, array $options) {
-        $builder->add('username', "text",  array("attr"=>array("placeholder"=>"username")));
+       
         $builder->add('email', "email", array("attr" => array("placeholder" => "email")));
         $builder->add('firstname', "text");
         $builder->add('lastname', "text");

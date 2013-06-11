@@ -1,0 +1,26 @@
+connected to: 127.0.0.1
+Mon Jun 10 17:34:57.502 all dbs
+Mon Jun 10 17:34:57.502 DATABASE: mydb	 to 	dump/mydb
+Mon Jun 10 17:34:57.503 	mydb.system.indexes to dump/mydb/system.indexes.bson
+Mon Jun 10 17:34:57.503 		 1 objects
+Mon Jun 10 17:34:57.503 	mydb.mydb to dump/mydb/mydb.bson
+Mon Jun 10 17:34:58.312 		 1800101 objects
+Mon Jun 10 17:34:58.603 	Metadata for mydb.mydb to dump/mydb/mydb.metadata.json
+Mon Jun 10 17:34:58.603 DATABASE: mongoblog	 to 	dump/mongoblog
+Mon Jun 10 17:34:58.604 	mongoblog.system.indexes to dump/mongoblog/system.indexes.bson
+Mon Jun 10 17:34:58.604 		 5 objects
+Mon Jun 10 17:34:58.604 	mongoblog.log to dump/mongoblog/log.bson
+Mon Jun 10 17:34:58.612 		 8206 objects
+Mon Jun 10 17:34:58.613 	Metadata for mongoblog.log to dump/mongoblog/log.metadata.json
+Mon Jun 10 17:34:58.613 	mongoblog.session to dump/mongoblog/session.bson
+Mon Jun 10 17:34:58.614 		 16 objects
+Mon Jun 10 17:34:58.614 	Metadata for mongoblog.session to dump/mongoblog/session.metadata.json
+Mon Jun 10 17:34:58.614 	mongoblog.users to dump/mongoblog/users.bson
+Mon Jun 10 17:34:58.614 		 0 objects
+Mon Jun 10 17:34:58.614 	Metadata for mongoblog.users to dump/mongoblog/users.metadata.json
+Mon Jun 10 17:34:58.614 	mongoblog.user to dump/mongoblog/user.bson
+Mon Jun 10 17:34:58.615 		 2 objects
+Mon Jun 10 17:34:58.615 	Metadata for mongoblog.user to dump/mongoblog/user.metadata.json
+Mon Jun 10 17:34:58.615 	mongoblog.article to dump/mongoblog/article.bson
+Mon Jun 10 17:34:58.615 		 1 objects
+Mon Jun 10 17:34:58.615 	Metadata for mongoblog.article to dump/mongoblog/article.metadata.json

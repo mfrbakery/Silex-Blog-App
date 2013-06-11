@@ -36,7 +36,7 @@ namespace MyApp\Controller{
       $user->get('/logout', array($this,"logout"))->bind('user.logout');
       $user->get('/signup', array($this,"signup"))->bind('user.signup');
       $user->post('/dosignup', array($this,"doSignUp"))->bind('user.dosignup');
-	  $user->post('/updateuser', array($this, "updateUser"))->bind('user.profile');
+	  $user->match('/updateuser', array($this, "updateUser"))->bind('user.updateuser');
 	  
       return $user;
     }
@@ -66,7 +66,7 @@ namespace MyApp\Controller{
 	
 	function updateUser(Application $app){
 		$updatForm = $app['form.factory']->create(new \MyApp\Form\UpdateUser());
-		return $app['twig']->render('user/profile.twig', array('updateuserform' => $updatForm->createView()));
+		return $app['twig']->render('user/updateuser.twig', array('updateuserform' => $updatForm->createView()));
 	}
 
     function doSignUp(Application $app) {
