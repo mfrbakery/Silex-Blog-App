@@ -1,5 +1,4 @@
 {% extends 'layout.twig' %}
-	{% block content %}
-	
-	{% include 'form/updateuser.twig' with {'form': updateuserform, 'action': path('user.updateuser')} only %}
+{% block content %}
+{% include 'form/updateuser.twig' with {'form': updateuserform, 'action': path('user.dosignup')} only %}
 {% endblock %}
